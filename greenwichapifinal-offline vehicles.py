@@ -1,3 +1,6 @@
+
+# THIS PROGRAM PRINTS ALL THE VEHICLES THAT ARE OFFLINE FROM A GIVEN DATE TO A GIVEN DATE
+
 import requests
 from datetime import date
 import time
@@ -63,3 +66,7 @@ table['Last_Connection'] = pd.DataFrame(table.Last_Connection)
 table.sort_values(by=['Last_Connection'], inplace=True, ascending=False)
 table = table.reset_index()
 print(table)
+
+reportExcel = table.to_excel("Last Connection reports.xlsx", sheet_name="Last Connection Report", engine='xlsxwriter')
+
+print('done')

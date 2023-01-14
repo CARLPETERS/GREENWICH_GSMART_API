@@ -14,7 +14,7 @@ res = requests.get('https://gsmartfleet.com/api/api.php?api=user&ver=1.0&key=FBF
 data = res.json()
 
 stopDate = time.strptime(str(date.today()), "%Y-%m-%d")
-startDate = time.strptime('2021-10-27', "%Y-%m-%d")
+startDate = time.strptime('2021-04-27', "%Y-%m-%d")
 
 table = pd.DataFrame()
 
@@ -55,6 +55,6 @@ table.sort_values(by=['Last_Connection'], inplace=True, ascending=False)
 table = table.reset_index()
 print(table)
 
-exportTableData = table.to_excel("Vehicles Offline Report.xlsx", sheet_name="Vehicles Offline Report", engine='xlsxwriter')
+#exportTableData = table.to_excel("Vehicles Offline Report.xlsx", sheet_name="Vehicles Offline Report", engine='xlsxwriter')
 
 
